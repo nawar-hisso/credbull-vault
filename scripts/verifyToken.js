@@ -7,26 +7,12 @@
 const hre = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const unlockTime = currentTimestampInSeconds + 60;
-
-  const lockedAmount = hre.ethers.parseEther("0.001");
-
-  const lock = await hre.ethers.deployContract("Lock", [unlockTime], {
-    value: lockedAmount,
-  });
-
-  await lock.waitForDeployment();
-
-  console.log(
-    `Lock with ${hre.ethers.formatEther(
-      lockedAmount,
-    )}ETH and unlock timestamp ${unlockTime} deployed to ${lock.target}`,
-  );
+  const totalSupply = hre.ethers.parseEther("1000000000");
 
   await hre.run("verify:verify", {
-    address: lock.target,
-    constructorArguments: [unlockTime],
+    address: "0xE5a25C884834abC78B031DdAdc169481E0D06173",
+    contract: "contracts/CredBullToken.sol:CredBullToken",
+    constructorArguments: [totalSupply],
   });
 }
 
