@@ -1,0 +1,65 @@
+{
+  "name": "hardhat-template",
+  "version": "1.0.0",
+  "description": "Hardhat template for Solidity development",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx hardhat test",
+    "test:coverage": "npx hardhat coverage",
+    "compile": "npx hardhat compile",
+    "lint:js": "npx eslint \"**/*.js\"",
+    "lint:js-fix": "npx eslint \"**/*.js\" --fix",
+    "lint:sol": "npx prettier \"**/*.{json,sol,md}\" --check && npx solhint \"contracts/**/*.sol\"",
+    "lint:sol-fix": "npx prettier \"**/*.{json,sol,md}\" --write && npx solhint \"contracts/**/*.sol\" --fix",
+    "lint": "npm run lint:js && npm run lint:sol",
+    "lint:fix": "npm run lint:js-fix && npm run lint:sol-fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/UNXD/hardhat-template.git"
+  },
+  "author": "UNXD",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UNXD/hardhat-template/issues"
+  },
+  "homepage": "https://github.com/UNXD/hardhat-template#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.6",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.11",
+    "@nomicfoundation/hardhat-verify": "^1.1.1",
+    "@typechain/ethers-v6": "^0.4.3",
+    "@typechain/hardhat": "^8.0.3",
+    "@types/mocha": "^10.0.6",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "ethers": "^6.13.0",
+    "hardhat-gas-reporter": "^1.0.10",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.1",
+    "prettier-plugin-solidity": "^1.1.3",
+    "solhint": "^3.5.1",
+    "solhint-plugin-prettier": "^0.0.5",
+    "solidity-coverage": "^0.8.12",
+    "ts-node": "^10.9.2",
+    "typechain": "^8.3.2",
+    "typescript": "^5.4.5"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.6.1",
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.1",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "chai": "^4.3.7",
+    "dotenv": "^16.3.1",
+    "hardhat": "^2.17.1",
+    "hardhat-contract-sizer": "^2.10.0"
+  }
+}
